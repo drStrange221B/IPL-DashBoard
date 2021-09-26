@@ -38,12 +38,16 @@ public class BactchConfig {
     @Bean
     public FlatFileItemReader<MatchInput> reader() {
         return new FlatFileItemReaderBuilder<MatchInput>().name("matchItemReader")
-                .resource(new ClassPathResource("match-data.csv")).delimited().names(FIELD_NAMES)
+                .resource(new ClassPathResource("match-data.csv"))
+
+                .delimited()
+                .names(FIELD_NAMES)
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<MatchInput>() {
                     {
                         setTargetType(MatchInput.class);
                     }
                 }).build();
+
     }
 
     @Bean
