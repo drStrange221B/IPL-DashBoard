@@ -3,11 +3,13 @@ package com.emrys.ipldashboard.controller;
 import com.emrys.ipldashboard.model.Team;
 import com.emrys.ipldashboard.repository.MatchRepository;
 import com.emrys.ipldashboard.repository.TeamRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class TeamController {
 
     private TeamRepository teamRepository;
