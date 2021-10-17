@@ -9,7 +9,7 @@ export const MatchDetailCard = ({ teamName, match }) => {
 
   const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
 
-  const otherTeamRoute = `/teams/${otherTeam}`;
+  const otherTeamRoute = `${process.env.REACT_APP_API_ROOT_URL}/teams/${otherTeam}`;
   const isMatchWon = teamName === match.matchWinner;
 
   return (
